@@ -1,0 +1,285 @@
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background: linear-gradient(135deg, #4f46e5, #7c3aed);
+  min-height: 100vh;
+  padding: 40px 20px;
+}
+
+
+.container {
+  max-width: 1000px;
+  margin: auto;
+  background: #ffffff;
+  padding: 40px;
+  border-radius: 18px;
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.15);
+}
+
+
+h1 {
+  text-align: center;
+  margin-bottom: 30px;
+  color: #222;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+
+h2 {
+  text-align: center;
+  margin-bottom: 25px;
+  color: #333;
+}
+
+
+.nav {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.btn {
+  display: inline-block;
+  padding: 10px 20px;
+  margin: 5px;
+  background: #4f46e5;
+  color: white;
+  border-radius: 8px;
+  text-decoration: none;
+  font-size: 14px;
+  transition: 0.3s ease;
+}
+
+.btn:hover {
+  background: #4338ca;
+  transform: translateY(-2px);
+}
+
+
+.search-form {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 30px;
+}
+
+.search-form input {
+  width: 260px;
+  padding: 12px;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+  margin-right: 10px;
+  transition: 0.3s;
+}
+
+.search-form input:focus {
+  border-color: #4f46e5;
+  outline: none;
+  box-shadow: 0 0 6px rgba(79, 70, 229, 0.3);
+}
+
+.search-form button {
+  padding: 12px 18px;
+  border-radius: 8px;
+  border: none;
+  background: #4f46e5;
+  color: white;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.search-form button:hover {
+  background: #4338ca;
+}
+
+
+form {
+  max-width: 450px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+}
+
+input {
+  padding: 13px;
+  margin-bottom: 18px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 14px;
+  transition: 0.3s ease;
+}
+
+input:focus {
+  border-color: #4f46e5;
+  outline: none;
+  box-shadow: 0 0 6px rgba(79, 70, 229, 0.3);
+}
+
+button {
+  padding: 13px;
+  background: #4f46e5;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 15px;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+button:hover {
+  background: #4338ca;
+}
+
+
+.event-list {
+  list-style: none;
+  margin-top: 25px;
+}
+
+.event-list li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 22px;
+  margin-bottom: 18px;
+  background: #f5f7ff;
+  border-radius: 14px;
+  border: 1px solid #e0e7ff;
+  transition: 0.3s ease;
+}
+
+.event-list li:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 15px 30px rgba(0,0,0,0.08);
+}
+
+.event-list strong {
+  font-size: 17px;
+  color: #111;
+}
+
+.event-list small {
+  color: #666;
+  font-size: 13px;
+}
+
+
+.edit {
+  background: #facc15;
+  color: #111;
+  padding: 8px 14px;
+  border-radius: 7px;
+  text-decoration: none;
+  font-size: 13px;
+  margin-right: 8px;
+  transition: 0.3s;
+}
+
+.edit:hover {
+  background: #eab308;
+}
+
+.delete {
+  background: #ef4444;
+  color: white;
+  padding: 8px 14px;
+  border-radius: 7px;
+  text-decoration: none;
+  font-size: 13px;
+  transition: 0.3s;
+}
+
+.delete:hover {
+  background: #dc2626;
+}
+
+
+.alert {
+  padding: 14px;
+  border-radius: 10px;
+  text-align: center;
+  margin-bottom: 25px;
+  font-size: 14px;
+  animation: fadeIn 0.4s ease-in-out;
+}
+
+.success {
+  background: #22c55e;
+  color: white;
+}
+
+.error {
+  background: #ef4444;
+  color: white;
+}
+
+
+.pagination {
+  text-align: center;
+  margin-top: 35px;
+}
+
+.pagination a {
+  display: inline-block;
+  padding: 8px 14px;
+  margin: 4px;
+  background: #e0e7ff;
+  color: #333;
+  border-radius: 6px;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.pagination a:hover {
+  background: #4f46e5;
+  color: white;
+}
+
+.pagination .active {
+  background: #4f46e5;
+  color: white;
+}
+
+
+p {
+  text-align: center;
+  color: #777;
+  margin-top: 20px;
+}
+
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-5px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+
+@media (max-width: 600px) {
+  .container {
+    padding: 25px;
+  }
+
+  .event-list li {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .event-list li div:last-child {
+    margin-top: 12px;
+  }
+
+  .search-form {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .search-form input {
+    margin-bottom: 10px;
+    width: 100%;
+  }
+}
