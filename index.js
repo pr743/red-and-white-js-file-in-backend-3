@@ -1,3 +1,4 @@
+require("dotenv").config();
 const express = require("express");
 const path = require("path");
 const session = require("express-session");
@@ -8,7 +9,8 @@ const errorHandler = require("./middleware/errorHandler");
 const expressLayouts = require("express-ejs-layouts");
 const Event = require("./models/Event");   
 
-const app = express();
+
+const app = express(); 
 connectDB();
 
 app.set("view engine", "ejs");
@@ -21,7 +23,7 @@ app.use(logger);
 app.use(expressLayouts);
 
 app.use(session({
-  secret: "secret",
+  secret: process.env.SESSION_SECRET,
   resave: false,
   saveUninitialized: true
 }));
@@ -64,7 +66,7 @@ app.get("/", async (req, res) => {
 app.use("/", require("./routes/event.routes"));
 app.use(errorHandler);
 
-const port = 5000;
-app.listen(port, () =>
-  console.log(`Server running on http://localhost:${port}`)
+const PORT = process.env.PORT || 5000;
+app.listen(PORT, () =>
+  console.log(`Server running on http://localhost:${PORT}`)
 );
